@@ -1,17 +1,24 @@
-As variáveis de ambiente estão protegidas nos arquivos appsettings de cada projeto (Username, Password e URL). Atualmente, seus valores são "admin", "password" e "https://localhost:7037/".
+---------ORIENTAÇÃO PARA REALIZAR O USO DO PROJETO-----------
 
-Caso haja alteração nas chaves de login em um dos projetos, é necessário aplicar a mesma alteração no outro.
-
-Configurações de banco de dados esta variavel DefaultConnection presente no arquivo appsettings do backend(Altere conforme o seu acesso ao banco).
-
-Para garantir a segurança, foi implementado o método de autenticação JWT nos endpoints de inserção, exclusão e edição.
+O projeto tem como objetivo realizar operações de CRUD para Clientes e Logradouros, estabelecendo uma relação de um para muitos entre as entidades.
 
 O front-end foi desenvolvido utilizando ASP.NET MVC, com Razor e JavaScript, enquanto o back-end foi construído como uma API REST em C# com .NET Core 8.0.
 
 Quanto ao banco de dados, utilizei SQL Server e Entity Framework no método GET de cada projeto, além de Procedures nos demais métodos.
-A arquitetura segue os padrões MVC e microserviços.
 
-O projeto tem como objetivo realizar operações de CRUD para Clientes e Logradouros, estabelecendo uma relação de um para muitos entre as entidades.
+A arquitetura segue os padrões MVC, DDD, MicroServiços e Clean Code.
+
+Para garantir a segurança, foi implementado o método de autenticação JWT, o TOKEN de configuração é acessado no endpoint /Administrador/Login informando as chaves de login pré configuradas, e usado nos endpoints de inserção, exclusão e edição.
+
+Configurações do banco de dados esta na variavel DefaultConnection presente no arquivo appsettings do projeto back-end (Altere conforme o seu acesso ao banco).
+
+Configurações da URL da API (https://localhost:7037/) esta na variavel Url presente no arquivo appsettings do projeto front-end e usado nas controllers.
+
+As variáveis de ambiente (Username e Password) estão protegidas nos arquivos appsettings de cada projeto. Atualmente, seus valores são "admin" e "password".
+
+Caso haja alteração nas chaves de login em um dos projetos, é necessário aplicar a mesma alteração no outro.
+
+Ao rodar os dois projetos simultaneamente, não é necessário inserir as chaves de acesso no back-end, pois os valores serão enviados pelo front-end. Apenas certifique-se de que as chaves de acesso nos arquivos appsettings de ambos os projetos sejam idênticas. Dessa forma, será possível utilizar as funcionalidades do projeto de forma plena e sem restrições.
 
 Segue exemplos de comandos que usei para criar as procedures de Clientes e Logradouras:
 
